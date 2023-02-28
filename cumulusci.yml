@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.1'
+project:
+    name: hc-solution-factory-module-icm
+    package:
+        name: hc-solution-factory-module-icm
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/hc-solution-factory-module-icm/tests
+            options:
+                outputdir: robot/hc-solution-factory-module-icm/results
+
+    robot_testdoc:
+        options:
+            path: robot/hc-solution-factory-module-icm/tests
+            output: robot/hc-solution-factory-module-icm/doc/hc-solution-factory-module-icm_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
